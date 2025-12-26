@@ -3,7 +3,9 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import path from "node:path";
+import { resolve } from "node:path";
+import { copyFileSync } from "node:fs";
+import { nodeExternals } from "rollup-plugin-node-externals";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,31 +15,27 @@ export default defineConfig({
         plugins: [["babel-plugin-react-compiler"]],
       },
     }),
+    nodeExternals(),
     dts({
-      entryRoot: "src",
-      outDir: "dist",
-      insertTypesEntry: true,
       rollupTypes: true,
+      afterBuild: () => {
+        copyFileSync("dist/index.d.ts", "dist/index.d.cts");
+      },
     }),
     tailwindcss(),
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
-      name: "strata-ui-react",
-      fileName: (format) => `index.${format}.js`,
+      entry: [resolve(__dirname, "src/index.ts")],
+      formats: ["es", "cjs"],
     },
+    emptyOutDir: true,
+    minify: false,
     rollupOptions: {
-      external: ["react", "react-dom"],
       output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
+        preserveModules: true,
       },
     },
-    sourcemap: true,
-    emptyOutDir: true,
   },
   resolve: {
     alias: {
