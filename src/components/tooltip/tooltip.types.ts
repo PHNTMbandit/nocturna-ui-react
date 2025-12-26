@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import { Tooltip as BaseTooltip } from "@base-ui/react/tooltip";
 
 export type TooltipProps = React.ComponentProps<typeof BaseTooltip.Root>;

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { TabsOrientationContext, type TabsIndicatorProps } from "./tabs.types";
 import { Tabs as SwitchTabs } from "@base-ui/react/tabs";
 import { cn } from "@/utils/cn";

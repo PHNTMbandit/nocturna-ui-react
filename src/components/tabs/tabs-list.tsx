@@ -1,7 +1,7 @@
 import { TabsOrientationContext, type TabsListProps } from "./tabs.types";
 import { Tabs as SwitchTabs } from "@base-ui/react/tabs";
 import { cn } from "@/utils/cn";
-import React from "react";
+import * as React from "react";
 
 export const TabsList = ({ className, ...props }: TabsListProps) => {
   const orientation = React.useContext(TabsOrientationContext);

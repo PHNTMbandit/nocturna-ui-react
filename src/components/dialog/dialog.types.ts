@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 
 export type DialogProps = React.ComponentProps<typeof BaseDialog.Root>;
