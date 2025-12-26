@@ -1,8 +1,9 @@
 {
   "name": "strata-ui-react",
-  "version": "0.1.8",
+  "version": "0.1.7",
   "type": "module",
-  "module": "./dist/strata-ui-react.js",
+  "main": "./dist/strata-ui-react.cjs.js",
+  "module": "./dist/strata-ui-react.es.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
@@ -16,8 +17,9 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/strata-ui-react.js"
+      "import": "./dist/strata-ui-react.es.js",
+      "require": "./dist/strata-ui-react.cjs.js",
+      "types": "./dist/index.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
@@ -35,6 +37,8 @@
     "@tanstack/react-ranger": "^0.0.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "vite-plugin-dts": "^4.5.4"
