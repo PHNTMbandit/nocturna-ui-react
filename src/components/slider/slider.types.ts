@@ -1,6 +1,12 @@
 import type { Icon } from "@phosphor-icons/react";
 import type { Ranger } from "@tanstack/react-ranger";
-import type { ComponentProps } from "react";
+import type {
+  ComponentProps,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  RefObject,
+  TouchEventHandler,
+} from "react";
 
 export type SliderProps = ComponentProps<"div"> & {
   leadingIcon?: Icon;
@@ -13,28 +19,28 @@ export type SliderProps = ComponentProps<"div"> & {
   label?: string;
 };
 
-export type SliderTrackProps = React.ComponentProps<"div"> & {
-  sliderRef: React.RefObject<HTMLDivElement | null>;
+export type SliderTrackProps = ComponentProps<"div"> & {
+  sliderRef: RefObject<HTMLDivElement | null>;
 };
 
-export type SliderHandleProps = React.ComponentProps<"button"> & {
+export type SliderHandleProps = ComponentProps<"button"> & {
   sliderInstance: Ranger<HTMLDivElement>;
   isActive: boolean;
-  onKeyDownHandler: React.KeyboardEventHandler<HTMLButtonElement>;
-  onMouseDownHandler: React.MouseEventHandler<HTMLButtonElement>;
-  onTouchStart: React.TouchEventHandler<HTMLButtonElement>;
+  onKeyDownHandler: KeyboardEventHandler<HTMLButtonElement>;
+  onMouseDownHandler: MouseEventHandler<HTMLButtonElement>;
+  onTouchStart: TouchEventHandler<HTMLButtonElement>;
   value: number;
 };
 
-export type SliderSegmentProps = React.ComponentProps<"div"> & {
+export type SliderSegmentProps = ComponentProps<"div"> & {
   index: number;
   steps: number;
   left: number;
   width: number;
 };
 
-export type SliderTickProps = React.ComponentProps<"div"> & {
+export type SliderTickProps = ComponentProps<"div"> & {
   percentage: number;
 };
 
-export type SliderTickLabelProps = React.ComponentProps<"p">;
+export type SliderTickLabelProps = ComponentProps<"p">;

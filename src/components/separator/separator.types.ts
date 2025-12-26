@@ -1,5 +1,6 @@
 import { Separator as BaseSeparator } from "@base-ui/react/separator";
 import { cva, type VariantProps } from "class-variance-authority";
+import type { ComponentProps } from "react";
 
 export const separatorVariants = cva(
   "shrink-0 rounded-full bg-outline transition-all",
@@ -55,7 +56,7 @@ export const separatorVariants = cva(
 );
 
 export type SeparatorProps = Omit<
-  React.ComponentProps<typeof BaseSeparator>,
+  ComponentProps<typeof BaseSeparator>,
   "style"
 > &
   VariantProps<typeof separatorVariants>;
