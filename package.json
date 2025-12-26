@@ -1,20 +1,58 @@
 {
-  "name": "strata-ui",
-  "private": true,
+  "name": "strata-ui-react",
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/strata-ui-react.cjs.js",
+  "module": "./dist/strata-ui-react.es.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && pnpm run build:css",
+    "build:css": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css --minify",
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/strata-ui-react.es.js",
+      "require": "./dist/strata-ui-react.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/style.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PHNTMbandit/strata-ui-react.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
+    "@base-ui/react": "^1.0.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-form": "^1.27.6",
+    "@tanstack/react-ranger": "^0.0.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@tailwindcss/cli": "^4.1.18",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
