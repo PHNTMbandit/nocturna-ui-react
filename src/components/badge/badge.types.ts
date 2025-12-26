@@ -1,6 +1,6 @@
-import type * as React from "react";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
+import type { ComponentProps } from "react";
 
 export const badgeVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap select-none transition-all px-xs py-3xs gap-3xs font-medium",
@@ -114,7 +114,7 @@ export const badgeVariants = cva(
   }
 );
 
-type BadgeProps = React.ComponentProps<"div">;
+type BadgeProps = ComponentProps<"div">;
 
 export interface BadgeExtendedProps
   extends Omit<BadgeProps, "style">,

@@ -1,9 +1,9 @@
 "use no memo";
 
-import * as React from "react";
 import type { SliderHandleProps } from "./slider.types";
 import { cn } from "@/utils/cn";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip";
+import { useState } from "react";
 
 export const SliderHandle = ({
   sliderInstance,
@@ -17,7 +17,7 @@ export const SliderHandle = ({
   ref,
   ...props
 }: SliderHandleProps) => {
-  const [isHovering, setIsHovering] = React.useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <Tooltip

@@ -1,7 +1,8 @@
 import type { Icon } from "@phosphor-icons/react";
 import type { Ranger } from "@tanstack/react-ranger";
+import type { ComponentProps } from "react";
 
-export type SliderProps = React.ComponentProps<"div"> & {
+export type SliderProps = ComponentProps<"div"> & {
   leadingIcon?: Icon;
   trailingIcon?: Icon;
   min?: number;

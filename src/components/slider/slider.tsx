@@ -1,6 +1,5 @@
 "use no memo";
 
-import * as React from "react";
 import { useRanger } from "@tanstack/react-ranger";
 import { SliderTrack } from "./slider-track";
 import { SliderTick } from "./slider-tick";
@@ -10,6 +9,7 @@ import { SliderHandle } from "./slider-handle";
 import type { Ranger } from "@tanstack/react-ranger";
 import { cn } from "@/utils/cn";
 import type { SliderProps } from "./slider.types";
+import { useRef, useState } from "react";
 
 export const Slider = ({
   leadingIcon: LeadingIcon,
@@ -24,8 +24,8 @@ export const Slider = ({
   ref,
   ...props
 }: SliderProps) => {
-  const sliderRef = React.useRef<HTMLDivElement>(null);
-  const [values, setValues] = React.useState<ReadonlyArray<number>>(
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [values, setValues] = useState<ReadonlyArray<number>>(
     defaultValues || [50]
   );
 

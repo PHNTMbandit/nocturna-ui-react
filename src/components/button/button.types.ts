@@ -1,4 +1,4 @@
-import type * as React from "react";
+import type { ComponentProps } from "react";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
@@ -537,7 +537,7 @@ export const buttonVariants = cva(
 );
 
 export interface ButtonExtendedProps
-  extends Omit<React.ComponentProps<"button">, "style">,
+  extends Omit<ComponentProps<"button">, "style">,
     VariantProps<typeof buttonVariants> {
   style?: "solid" | "outline" | "ghost";
 }

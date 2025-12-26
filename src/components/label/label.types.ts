@@ -1,3 +1,3 @@
-import type * as React from "react";
+import type { ComponentProps } from "react";
 
-export type LabelProps = React.ComponentProps<"label">;
+export type LabelProps = ComponentProps<"label">;

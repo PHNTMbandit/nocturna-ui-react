@@ -1,10 +1,6 @@
-import type * as React from "react";
 import { Tooltip as BaseTooltip } from "@base-ui/react/tooltip";
+import type { ComponentProps } from "react";
 
-export type TooltipProps = React.ComponentProps<typeof BaseTooltip.Root>;
-export type TooltipTriggerProps = React.ComponentProps<
-  typeof BaseTooltip.Trigger
->;
-export type TooltipContentProps = React.ComponentProps<
-  typeof BaseTooltip.Popup
->;
+export type TooltipProps = ComponentProps<typeof BaseTooltip.Root>;
+export type TooltipTriggerProps = ComponentProps<typeof BaseTooltip.Trigger>;
+export type TooltipContentProps = ComponentProps<typeof BaseTooltip.Popup>;

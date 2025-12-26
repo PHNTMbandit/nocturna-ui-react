@@ -1,14 +1,14 @@
 import { TabsOrientationContext, type TabsProps } from "./tabs.types";
 import { Tabs as SwitchTabs } from "@base-ui/react/tabs";
 import { cn } from "@/utils/cn";
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 export const Tabs = ({ className, ref, ...props }: TabsProps) => {
-  const [orientation, setOrientation] = React.useState<
-    "horizontal" | "vertical"
-  >(props.orientation ?? "vertical");
+  const [orientation, setOrientation] = useState<"horizontal" | "vertical">(
+    props.orientation ?? "vertical"
+  );
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setOrientation("horizontal");

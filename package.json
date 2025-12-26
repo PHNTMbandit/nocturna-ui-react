@@ -11,9 +11,9 @@
     "build:css": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css --minify",
     "lint": "eslint .",
     "preview": "vite preview",
-    "release:patch": "pnpm build && pnpm version patch && git push --follow-tags && pnpm publish",
-    "release:minor": "pnpm build && pnpm version minor && git push --follow-tags && pnpm publish",
-    "release:major": "pnpm build && pnpm version major && git push --follow-tags && pnpm publish"
+    "release:patch": "pnpm build && pnpm version patch && git push && pnpm publish",
+    "release:minor": "pnpm build && pnpm version minor && git push && pnpm publish",
+    "release:major": "pnpm build && pnpm version major && git push && pnpm publish"
   },
   "exports": {
     ".": {

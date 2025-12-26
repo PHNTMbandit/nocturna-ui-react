@@ -1,4 +1,6 @@
-export type ProfileProps = React.ComponentProps<"button"> & {
+import type { ComponentProps } from "react";
+
+export type ProfileProps = ComponentProps<"button"> & {
   imageUrl: string;
   fallbackText: string;
   profileName?: string;

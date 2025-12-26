@@ -1,20 +1,18 @@
-import type * as React from "react";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
+import type { ComponentProps } from "react";
 
-export type DialogProps = React.ComponentProps<typeof BaseDialog.Root>;
+export type DialogProps = ComponentProps<typeof BaseDialog.Root>;
 
-export type DialogTriggerProps = React.ComponentProps<
-  typeof BaseDialog.Trigger
->;
+export type DialogTriggerProps = ComponentProps<typeof BaseDialog.Trigger>;
 
-export type DialogPopupProps = React.ComponentProps<typeof BaseDialog.Popup> & {
+export type DialogPopupProps = ComponentProps<typeof BaseDialog.Popup> & {
   showCloseButton?: boolean;
 };
 
-export type DialogTitleProps = React.ComponentProps<typeof BaseDialog.Title>;
+export type DialogTitleProps = ComponentProps<typeof BaseDialog.Title>;
 
-export type DialogDescriptionProps = React.ComponentProps<
+export type DialogDescriptionProps = ComponentProps<
   typeof BaseDialog.Description
 >;
 
-export type DialogCloseProps = React.ComponentProps<typeof BaseDialog.Close>;
+export type DialogCloseProps = ComponentProps<typeof BaseDialog.Close>;

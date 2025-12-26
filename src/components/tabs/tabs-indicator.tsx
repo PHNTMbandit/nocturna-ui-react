@@ -1,10 +1,10 @@
-import * as React from "react";
 import { TabsOrientationContext, type TabsIndicatorProps } from "./tabs.types";
 import { Tabs as SwitchTabs } from "@base-ui/react/tabs";
 import { cn } from "@/utils/cn";
+import { useContext } from "react";
 
 export const TabsIndicator = ({ className, ...props }: TabsIndicatorProps) => {
-  const orientation = React.useContext(TabsOrientationContext);
+  const orientation = useContext(TabsOrientationContext);
   if (orientation === "horizontal") {
     return (
       <SwitchTabs.Indicator

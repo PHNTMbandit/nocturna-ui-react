@@ -1,8 +1,8 @@
 import { cn } from "@/utils/cn";
 import { Input as BaseInput } from "@base-ui/react/input";
-import React from "react";
 import type { InputProps } from "./input.types";
 import { Separator } from "../separator";
+import { createElement } from "react";
 
 export const Input = ({
   leadingIcon,
@@ -25,7 +25,7 @@ export const Input = ({
             className={cn(
               "flex items-center text-on-surface-variant justify-center [&>svg]:size-s group-focus-within:text-primary transition-all"
             )}>
-            {React.createElement(leadingIcon, {
+            {createElement(leadingIcon, {
               weight: "bold",
             })}
           </div>
