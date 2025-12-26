@@ -1,6 +1,6 @@
 "use no memo";
 
-import React from "react";
+import * as React from "react";
 import type { SliderHandleProps } from "./slider.types";
 import { cn } from "@/utils/cn";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip";

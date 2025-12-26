@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import type { Icon } from "@phosphor-icons/react";
 import { Input } from "@base-ui/react/input";
 
