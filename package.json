@@ -1,8 +1,26 @@
 {
   "name": "strata-ui-react",
+  "description": "A set of accessible, customizable, and production-ready React components built with Tailwind CSS.",
   "private": false,
   "version": "0.1.10",
   "type": "module",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && pnpm run build:css",
@@ -13,23 +31,6 @@
     "release:minor": "pnpm run build && pnpm version minor && git push && pnpm publish",
     "release:major": "pnpm run build && pnpm version major && git push && pnpm publish"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.cjs"
-    },
-    "./dist/style.css": "./dist/style.css",
-    "./style.css": "./dist/style.css"
-  },
-  "style": "./dist/style.css",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
   "dependencies": {
     "@base-ui/react": "^1.0.0",
     "@phosphor-icons/react": "^2.1.10",
@@ -43,10 +44,6 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "vite-plugin-dts": "^4.5.4"
-  },
-  "peerDependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
