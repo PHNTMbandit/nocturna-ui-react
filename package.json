@@ -31,9 +31,10 @@
 		"build:css": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css --minify",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"release:patch": "pnpm run build && pnpm version patch && git push && pnpm publish",
-		"release:minor": "pnpm run build && pnpm version minor && git push && pnpm publish",
-		"release:major": "pnpm run build && pnpm version major && git push && pnpm publish"
+		"test": "vitest --passWithNoTests",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@base-ui/react": "^1.0.0",
