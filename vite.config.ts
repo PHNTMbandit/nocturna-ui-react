@@ -2,7 +2,6 @@
 
 import path from "node:path"
 import { fileURLToPath } from "node:url"
-import { viteCommonjs } from "@originjs/vite-plugin-commonjs"
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin"
 import react from "@vitejs/plugin-react"
 import { playwright } from "@vitest/browser-playwright"
@@ -19,11 +18,7 @@ const dirname =
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
 	plugins: [
-		react({
-			babel: {
-				plugins: [["babel-plugin-react-compiler"]],
-			},
-		}),
+		react(),
 		dts({
 			tsconfigPath: "./tsconfig.app.json",
 			entryRoot: "src",
@@ -32,7 +27,6 @@ export default defineConfig({
 			rollupTypes: true,
 			outDir: "dist",
 		}),
-		viteCommonjs(),
 	],
 	build: {
 		lib: {
@@ -41,7 +35,12 @@ export default defineConfig({
 			formats: ["es"],
 		},
 		rollupOptions: {
-			external: ["react", "react-dom", ...Object.keys(peerDependencies)],
+			external: [
+				...Object.keys(peerDependencies),
+				"use-sync-external-store",
+				"use-sync-external-store/shim",
+				"use-sync-external-store/with-selector",
+			],
 			output: {
 				globals: {
 					react: "React",
