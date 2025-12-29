@@ -7,6 +7,14 @@
 		"module": "ESNext",
 		"types": ["vite/client"],
 		"skipLibCheck": true,
+		"declaration": true,
+		"declarationMap": false,
+		"emitDeclarationOnly": false,
+
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"isolatedModules": true,
+		"skipDefaultLibCheck": true,
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",

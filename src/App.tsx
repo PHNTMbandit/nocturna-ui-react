@@ -1,4 +1,4 @@
-import { Button } from "./components"
+import { Button } from "./index"
 
 function App() {
 	return <Button>Click me</Button>

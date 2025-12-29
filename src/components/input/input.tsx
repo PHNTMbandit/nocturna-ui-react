@@ -15,7 +15,7 @@ export const Input = ({
 		<div
 			aria-disabled={props.disabled}
 			className={cn(
-				"group inset-shadow-2-shadow inset-shadow-sm flex h-xl w-full items-center gap-xs rounded-xl bg-surface-dim px-md py-sm outline-2 outline-transparent transition-all focus-within:caret-primary focus-within:outline-primary hover:not-focus-within:outline-outline data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50 data-[disabled=true]:hover:outline-transparent",
+				"group inset-shadow-2-shadow flex h-xl w-full items-center gap-xs rounded-xl bg-surface-dim px-md py-sm outline-2 outline-transparent transition-all focus-within:caret-primary focus-within:outline-primary hover:not-focus-within:outline-outline data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50 data-[disabled=true]:hover:outline-transparent",
 				className,
 			)}
 			data-disabled={props.disabled}

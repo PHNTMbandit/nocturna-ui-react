@@ -24,9 +24,12 @@ export default defineConfig({
 			},
 		}),
 		dts({
+			tsconfigPath: "./tsconfig.app.json",
+			entryRoot: "src",
 			exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
 			insertTypesEntry: true,
-			outDir: "./dist",
+			rollupTypes: true,
+			outDir: "dist",
 		}),
 	],
 	build: {
