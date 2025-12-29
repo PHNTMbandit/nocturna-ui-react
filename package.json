@@ -16,10 +16,7 @@
 			"import": "./dist/strata-ui-react.es.js",
 			"require": "./dist/strata-ui-react.cjs"
 		},
-		"./styles.css": {
-			"import": "./dist/styles.css",
-			"require": "./dist/styles.css"
-		}
+		"./styles.css": "./dist/styles.css"
 	},
 	"files": [
 		"dist"

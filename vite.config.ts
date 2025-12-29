@@ -36,21 +36,32 @@ export default defineConfig({
 		lib: {
 			entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
 			name: "strata-ui-react",
-			fileName: (format) => `strata-ui-react.${format}.js`,
-			formats: ["es", "cjs", "umd"],
+			fileName: (format) => {
+				if (format === "cjs") return `strata-ui-react.cjs`
+				if (format === "es") return `strata-ui-react.es.js`
+				return `strata-ui-react.${format}.js`
+			},
+			formats: ["es", "cjs"],
 		},
 		rollupOptions: {
 			external: Object.keys(peerDependencies),
-			output: {
-				globals: {
-					react: "React",
-					"react-dom": "ReactDOM",
+			output: [
+				{
+					format: "es",
+					entryFileNames: "strata-ui-react.es.js",
 				},
-			},
+				{
+					format: "cjs",
+					entryFileNames: "strata-ui-react.cjs",
+					exports: "named",
+				},
+			],
 		},
 		commonjsOptions: {
 			transformMixedEsModules: true,
 		},
+		sourcemap: true,
+		emptyOutDir: true,
 	},
 	test: {
 		globals: true,
