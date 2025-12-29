@@ -13,8 +13,7 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/strata-ui-react.es.js",
-			"require": "./dist/strata-ui-react.umd.js"
+			"import": "./dist/strata-ui-react.es.js"
 		},
 		"./styles.css": "./dist/styles.css"
 	},
