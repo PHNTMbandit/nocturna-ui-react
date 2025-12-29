@@ -35,9 +35,8 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
-			name: "strata-ui-react",
 			fileName: (format) => `strata-ui-react.${format}.js`,
-			formats: ["es", "umd"],
+			formats: ["es"],
 		},
 		rollupOptions: {
 			external: Object.keys(peerDependencies),

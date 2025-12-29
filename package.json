@@ -7,23 +7,24 @@
 		"type": "git",
 		"url": "https://github.com/PHNTMbandit/strata-ui-react"
 	},
+	"main": "./dist/strata-ui-react.es.js",
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/strata-ui-react.es.js"
+			"default": "./dist/strata-ui-react.es.js"
 		},
-		"./styles.css": "./dist/styles.css"
+		"./styles": "./dist/styles.css"
 	},
 	"files": [
 		"dist"
 	],
 	"sideEffects": [
-		"*.css"
+		"**/*.css"
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc -b && vite build && pnpm run build:css",
+		"build": "tsc -b && rm -rf ./dist && vite build  && pnpm run build:css",
 		"build:css": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
 		"lint": "biome check --write",
 		"preview": "vite preview",
@@ -69,6 +70,8 @@
 		"husky": "^9.1.7",
 		"jsdom": "^27.4.0",
 		"playwright": "^1.57.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
 		"react-test-renderer": "^19.2.3",
 		"standard-version": "^9.5.0",
 		"storybook": "^10.1.10",
