@@ -35,17 +35,24 @@ export default defineConfig({
 			formats: ["es"],
 		},
 		rollupOptions: {
-			external: [
-				...Object.keys(peerDependencies),
-				"use-sync-external-store",
-				"use-sync-external-store/shim",
-				"use-sync-external-store/with-selector",
-			],
-			output: {
-				globals: {
-					react: "React",
-					"react-dom": "ReactDOM",
-				},
+			external: (id) => {
+				if (
+					Object.keys(peerDependencies).some(
+						(dep) => id === dep || id.startsWith(`${dep}/`),
+					)
+				) {
+					return true
+				}
+
+				if (id.startsWith("react") || id.startsWith("react-dom")) {
+					return true
+				}
+
+				if (id.startsWith("use-sync-external-store")) {
+					return true
+				}
+
+				return false
 			},
 		},
 	},
