@@ -25,10 +25,8 @@ export default defineConfig({
 		}),
 		dts({
 			tsconfigPath: "./tsconfig.app.json",
-			entryRoot: "src",
 			exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
 			insertTypesEntry: true,
-			rollupTypes: true,
 			outDir: "dist",
 		}),
 	],
@@ -36,32 +34,19 @@ export default defineConfig({
 		lib: {
 			entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
 			name: "strata-ui-react",
-			fileName: (format) => {
-				if (format === "cjs") return `strata-ui-react.cjs`
-				if (format === "es") return `strata-ui-react.es.js`
-				return `strata-ui-react.${format}.js`
-			},
-			formats: ["es", "cjs"],
+			fileName: (format) => `strata-ui-react.${format}.js`,
+			formats: ["es", "umd"],
 		},
 		rollupOptions: {
 			external: Object.keys(peerDependencies),
-			output: [
-				{
-					format: "es",
-					entryFileNames: "strata-ui-react.es.js",
+			output: {
+				globals: {
+					react: "React",
+					"react-dom": "ReactDOM",
+					"react/jsx-runtime": "jsxRuntime",
 				},
-				{
-					format: "cjs",
-					entryFileNames: "strata-ui-react.cjs",
-					exports: "named",
-				},
-			],
+			},
 		},
-		commonjsOptions: {
-			transformMixedEsModules: true,
-		},
-		sourcemap: true,
-		emptyOutDir: true,
 	},
 	test: {
 		globals: true,
