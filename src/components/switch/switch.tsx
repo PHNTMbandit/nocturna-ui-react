@@ -16,7 +16,7 @@ export const Switch = ({ label, className, ref, ...props }: SwitchProps) => {
 			>
 				<BaseSwitch.Thumb
 					className={
-						"size-[14px] translate-x-[6px] rounded-full bg-accent shadow-xs transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] data-checked:size-[18px] data-checked:translate-x-[26px] data-checked:scale-[1.1] data-checked:bg-on-accent data-unchecked:bg-accent"
+						"raised-1 size-[14px] translate-x-[6px] rounded-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] data-checked:size-[18px] data-checked:translate-x-[26px] data-checked:scale-[1.1] data-checked:bg-on-accent data-unchecked:bg-accent"
 					}
 				/>
 			</BaseSwitch.Root>

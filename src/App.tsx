@@ -9,7 +9,9 @@ export const App = ({ className, children, ref, ...props }: AppProps) => {
 		<div className={cn("", className)} ref={ref} {...props}>
 			{children}
 			<Button>Click Me</Button>
-			<Button tone={"error"}>Click Me</Button>
+			<Button tone={"error"} className="text-on-primary">
+				Click Me
+			</Button>
 			<Switch />
 		</div>
 	)
