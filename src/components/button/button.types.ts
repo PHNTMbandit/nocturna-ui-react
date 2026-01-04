@@ -7,17 +7,17 @@ export const buttonVariants = cva(
 	{
 		variants: {
 			tone: {
-				error: "",
-				glass: "",
-				neutral: "",
 				primary: "",
 				secondary: "",
-				success: "",
 				accent: "",
+				neutral: "",
+				error: "",
+				success: "",
 				warning: "",
+				glass: "",
 			},
 			style: {
-				solid: "",
+				solid: "not-active:hover:-translate-y-3xs active:text-opacity-50",
 				outline: "active:border-transparent",
 				ghost: "",
 			},
@@ -36,501 +36,202 @@ export const buttonVariants = cva(
 			size: "medium",
 		},
 		compoundVariants: [
+			// === GENERAL STYLE/SIZE VARIANTS ===
+			// Solid style shadow effects
 			{
-				tone: "primary",
-				style: "solid",
-				className: "bg-primary text-on-primary",
-			},
-			{
-				tone: "primary",
 				style: "solid",
 				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
+				className:
+					"not-active:inset-shadow-raised-sm not-active:shadow-sm not-active:hover:shadow-md active:inset-shadow-sm",
 			},
 			{
-				tone: "primary",
 				style: "solid",
 				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
+				className:
+					"not-active:inset-shadow-raised-md not-active:shadow-md not-active:hover:shadow-lg active:inset-shadow-md",
 			},
+			{
+				style: "solid",
+				size: ["large", "iconLarge"],
+				className:
+					"not-active:inset-shadow-raised-lg not-active:shadow-lg not-active:hover:shadow-xl active:inset-shadow-lg",
+			},
+			// Outline style borders
+			{
+				style: "outline",
+				size: ["small", "iconSmall"],
+				className: "border-1",
+			},
+			{
+				style: "outline",
+				size: ["medium", "iconMedium"],
+				className: "border-2",
+			},
+			{
+				style: "outline",
+				size: ["large", "iconLarge"],
+				className: "border-4",
+			},
+			// Ghost style shadow effects
+			{
+				style: "ghost",
+				size: ["small", "iconSmall"],
+				className:
+					"not-active:hover:bg-surface-bright not-active:hover:inset-shadow-raised-sm not-active:hover:shadow-sm active:bg-surface-dim active:inset-shadow-sm",
+			},
+			{
+				style: "ghost",
+				size: ["medium", "iconMedium"],
+				className:
+					"not-active:hover:bg-surface-bright not-active:hover:inset-shadow-raised-md not-active:hover:shadow-md active:bg-surface-dim active:inset-shadow-md",
+			},
+			{
+				style: "ghost",
+				size: ["large", "iconLarge"],
+				className:
+					"not-active:hover:bg-surface-bright not-active:hover:inset-shadow-raised-lg not-active:hover:shadow-lg active:bg-surface-dim active:inset-shadow-lg",
+			},
+			// === PRIMARY TONE ===
+			// Primary solid
 			{
 				tone: "primary",
 				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
+				className: "bg-primary text-on-primary active:text-on-primary/70",
 			},
+			// Primary outline
 			{
 				tone: "primary",
 				style: "outline",
 				className:
 					"border-primary text-primary hover:text-on-primary-container hover:bg-primary-container active:bg-transparent",
 			},
-			{
-				tone: "primary",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "primary",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "primary",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
+			// Primary ghost
 			{
 				tone: "primary",
 				style: "ghost",
 				className: "text-primary hover:surface-bright active:bg-surface-dim",
 			},
-			{
-				tone: "primary",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "primary",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "primary",
-				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
-			},
-			// Secondary variants
+			// === SECONDARY TONE ===
+			// Secondary solid
 			{
 				tone: "secondary",
 				style: "solid",
-				className: "bg-secondary text-on-secondary",
+				className: "bg-secondary text-on-secondary active:text-on-secondary/70",
 			},
-			{
-				tone: "secondary",
-				style: "solid",
-				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "secondary",
-				style: "solid",
-				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "secondary",
-				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
-			},
+			// Secondary outline
 			{
 				tone: "secondary",
 				style: "outline",
 				className:
 					"border-secondary text-secondary hover:text-on-secondary-container hover:bg-secondary-container active:bg-transparent",
 			},
-			{
-				tone: "secondary",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "secondary",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "secondary",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
+			// Secondary ghost
 			{
 				tone: "secondary",
 				style: "ghost",
 				className: "text-secondary hover:surface-bright active:bg-surface-dim",
 			},
-			{
-				tone: "secondary",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "secondary",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "secondary",
-				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
-			},
-			// Accent variants
+			// === ACCENT TONE ===
+			// Accent solid
 			{
 				tone: "accent",
 				style: "solid",
-				className: "bg-accent text-on-accent",
+				className: "bg-accent text-on-accent active:text-on-accent/70",
 			},
-			{
-				tone: "accent",
-				style: "solid",
-				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "accent",
-				style: "solid",
-				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "accent",
-				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
-			},
+			// Accent outline
 			{
 				tone: "accent",
 				style: "outline",
 				className:
 					"border-accent text-accent hover:text-on-accent-container hover:bg-accent-container active:bg-transparent",
 			},
-			{
-				tone: "accent",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "accent",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "accent",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
+			// Accent ghost
 			{
 				tone: "accent",
 				style: "ghost",
 				className: "text-accent hover:surface-bright active:bg-surface-dim",
 			},
+
+			// === NEUTRAL TONE ===
+			// Neutral solid
 			{
-				tone: "accent",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "accent",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "accent",
-				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
-			},
-			// Success variants
-			{
-				tone: "success",
+				tone: "neutral",
 				style: "solid",
-				className: "bg-success text-on-success",
-			},
-			{
-				tone: "success",
-				style: "solid",
-				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "success",
-				style: "solid",
-				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "success",
-				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
-			},
-			{
-				tone: "success",
-				style: "outline",
 				className:
-					"border-success text-success hover:text-on-success-container hover:bg-success-container active:bg-transparent",
+					"bg-surface-container text-on-surface active:text-on-surface/70",
 			},
-			{
-				tone: "success",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "success",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "success",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
-			{
-				tone: "success",
-				style: "ghost",
-				className: "text-success hover:surface-bright active:bg-surface-dim",
-			},
-			{
-				tone: "success",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "success",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "success",
-				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
-			},
-			// Warning variants
-			{
-				tone: "warning",
-				style: "solid",
-				className: "bg-warning text-on-warning",
-			},
-			{
-				tone: "warning",
-				style: "solid",
-				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "warning",
-				style: "solid",
-				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "warning",
-				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
-			},
-			{
-				tone: "warning",
-				style: "outline",
-				className:
-					"border-warning text-warning hover:text-on-warning-container hover:bg-warning-container active:bg-transparent",
-			},
-			{
-				tone: "warning",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "warning",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "warning",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
-			{
-				tone: "warning",
-				style: "ghost",
-				className: "text-warning hover:surface-bright active:bg-surface-dim",
-			},
-			{
-				tone: "warning",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "warning",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "warning",
-				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
-			},
-			// error variants
-			{
-				tone: "error",
-				style: "solid",
-				className: "bg-error text-on-error",
-			},
-			{
-				tone: "error",
-				style: "solid",
-				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "error",
-				style: "solid",
-				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "error",
-				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
-			},
-			{
-				tone: "error",
-				style: "outline",
-				className:
-					"border-error text-error hover:text-on-error-container hover:bg-error-container active:bg-transparent",
-			},
-			{
-				tone: "error",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "error",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "error",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
-			{
-				tone: "error",
-				style: "ghost",
-				className: "text-error hover:surface-bright active:bg-surface-dim",
-			},
-			{
-				tone: "error",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "error",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "error",
-				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
-			},
-			// Neutral variants
-			{
-				tone: "neutral",
-				style: "solid",
-				className: "bg-surface-container text-on-surface",
-			},
-			{
-				tone: "neutral",
-				style: "solid",
-				size: ["small", "iconSmall"],
-				className: "raised-1 hover:raised-2 active:inset-shadow-1-shadow",
-			},
-			{
-				tone: "neutral",
-				style: "solid",
-				size: ["medium", "iconMedium"],
-				className: "raised-2 hover:raised-4 active:inset-shadow-2-shadow",
-			},
-			{
-				tone: "neutral",
-				style: "solid",
-				size: ["large", "iconLarge"],
-				className: "raised-4 hover:raised-8 active:inset-shadow-3-shadow",
-			},
+			// Neutral outline
 			{
 				tone: "neutral",
 				style: "outline",
 				className:
 					"border-outline text-on-surface hover:text-on-surface hover:bg-surface-container-high active:bg-transparent",
 			},
-			{
-				tone: "neutral",
-				style: "outline",
-				size: ["small", "iconSmall"],
-				className: "border-1",
-			},
-			{
-				tone: "neutral",
-				style: "outline",
-				size: ["medium", "iconMedium"],
-				className: "border-2",
-			},
-			{
-				tone: "neutral",
-				style: "outline",
-				size: ["large", "iconLarge"],
-				className: "border-4",
-			},
+			// Neutral ghost
 			{
 				tone: "neutral",
 				style: "ghost",
 				className: "text-on-surface hover:surface-bright active:bg-surface-dim",
 			},
+			// === ERROR TONE ===
+			// Error solid
 			{
-				tone: "neutral",
-				style: "ghost",
-				size: ["small", "iconSmall"],
-				className: "hover:raised-1 active:inset-shadow-1-shadow",
+				tone: "error",
+				style: "solid",
+				className: "bg-error text-on-error active:text-on-error/70",
 			},
+			// Error outline
 			{
-				tone: "neutral",
-				style: "ghost",
-				size: ["medium", "iconMedium"],
-				className: "hover:raised-2 active:inset-shadow-2-shadow",
+				tone: "error",
+				style: "outline",
+				className:
+					"border-error text-error hover:text-on-error-container hover:bg-error-container active:bg-transparent",
 			},
+			// Error ghost
 			{
-				tone: "neutral",
+				tone: "error",
 				style: "ghost",
-				size: ["large", "iconLarge"],
-				className: "hover:raised-4 active:inset-shadow-3-shadow",
+				className: "text-error hover:surface-bright active:bg-surface-dim",
+			},
+			// === SUCCESS TONE ===
+			// Success solid
+			{
+				tone: "success",
+				style: "solid",
+				className: "bg-success text-on-success active:text-on-success/70",
+			},
+			// Success outline
+			{
+				tone: "success",
+				style: "outline",
+				className:
+					"border-success text-success hover:text-on-success-container hover:bg-success-container active:bg-transparent",
+			},
+			// Success ghost
+			{
+				tone: "success",
+				style: "ghost",
+				className: "text-success hover:surface-bright active:bg-surface-dim",
+			},
+			// === WARNING TONE ===
+			// Warning solid
+			{
+				tone: "warning",
+				style: "solid",
+				className: "bg-warning text-on-warning active:text-on-warning/70",
+			},
+			// Warning outline
+			{
+				tone: "warning",
+				style: "outline",
+				className:
+					"border-warning text-warning hover:text-on-warning-container hover:bg-warning-container active:bg-transparent",
+			},
+			// Warning ghost
+			{
+				tone: "warning",
+				style: "ghost",
+				className: "text-warning hover:surface-bright active:bg-surface-dim",
 			},
 		],
 	},

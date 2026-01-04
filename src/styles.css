@@ -52,6 +52,7 @@
   --color-outline-variant: var(--strata-outline-variant);
   --color-scrim: var(--strata-scrim);
   --color-shadow: var(--strata-shadow);
+  --color-highlight: var(--strata-highlight);
   --color-glass-fill-lowest: var(--strata-glass-fill-lowest);
   --color-glass-fill-low: var(--strata-glass-fill-low);
   --color-glass-fill-medium: var(--strata-glass-fill-medium);
@@ -94,14 +95,38 @@
   --text-4xl: var(--strata-text-4xl);
 
   --blur-*: initial;
-  --blur-1: var(--strata-blur-1);
-  --blur-2: var(--strata-blur-2);
-  --blur-3: var(--strata-blur-3);
-  --blur-4: var(--strata-blur-4);
-  --blur-5: var(--strata-blur-5);
+  --blur-xs: var(--strata-blur-xs);
+  --blur-sm: var(--strata-blur-sm);
+  --blur-md: var(--strata-blur-md);
+  --blur-lg: var(--strata-blur-lg);
+  --blur-xl: var(--strata-blur-xl);
 
-  --inset-shadow-*: initial;
   --shadow-*: initial;
+  --shadow-xs: var(--strata-shadow-xs);
+  --shadow-sm: var(--strata-shadow-sm);
+  --shadow-md: var(--strata-shadow-md);
+  --shadow-lg: var(--strata-shadow-lg);
+  --shadow-xl: var(--strata-shadow-xl);
+  
+  --drop-shadow-*: initial;
+  --drop-shadow-xs: var(--strata-drop-shadow-xs);
+  --drop-shadow-sm: var(--strata-drop-shadow-sm);
+  --drop-shadow-md: var(--strata-drop-shadow-md);
+  --drop-shadow-lg: var(--strata-drop-shadow-lg);
+  --drop-shadow-xl: var(--strata-drop-shadow-xl);
+  
+  --inset-shadow-*: initial;
+  --inset-shadow-xs: var(--strata-inset-shadow-xs);
+  --inset-shadow-sm: var(--strata-inset-shadow-sm);
+  --inset-shadow-md: var(--strata-inset-shadow-md);
+  --inset-shadow-lg: var(--strata-inset-shadow-lg);
+  --inset-shadow-xl: var(--strata-inset-shadow-xl);
+
+  --inset-shadow-raised-xs: var(--strata-inset-raised-xs);
+  --inset-shadow-raised-sm: var(--strata-inset-raised-sm);
+  --inset-shadow-raised-md: var(--strata-inset-raised-md);
+  --inset-shadow-raised-lg: var(--strata-inset-raised-lg);
+  --inset-shadow-raised-xl: var(--strata-inset-raised-xl);
 }
 
 :root {
@@ -360,11 +385,35 @@
   --strata-text-3xl: clamp(1.2014rem, 0.8445rem + 1.5859vw, 2.0736rem);
   --strata-text-4xl: clamp(1.3515rem, 0.8865rem + 2.0669vw, 2.4883rem);
 
-  --strata-blur-1: blur(8px);
-  --strata-blur-2: blur(12px);
-  --strata-blur-3: blur(16px);
-  --strata-blur-4: blur(20px);
-  --strata-blur-5: blur(24px);
+  --strata-blur-xs: blur(8px);
+  --strata-blur-sm: blur(12px);
+  --strata-blur-md: blur(16px);
+  --strata-blur-lg: blur(20px);
+  --strata-blur-xl: blur(24px);
+
+  --strata-shadow-xs: 0px 1px 2px 0 theme(--color-shadow);
+  --strata-shadow-sm: 0px 2px 4px 0 theme(--color-shadow);
+  --strata-shadow-md: 0px 4px 8px 0 theme(--color-shadow);
+  --strata-shadow-lg: 0px 8px 16px 0 theme(--color-shadow);
+  --strata-shadow-xl: 0px 16px 24px 0 theme(--color-shadow);
+
+  --strata-drop-shadow-xs: 0px 1px 2px 0 theme(--color-shadow);
+  --strata-drop-shadow-sm: 0px 2px 4px 0 theme(--color-shadow);
+  --strata-drop-shadow-md: 0px 4px 8px 0 theme(--color-shadow);
+  --strata-drop-shadow-lg: 0px 8px 16px 0 theme(--color-shadow);
+  --strata-drop-shadow-xl: 0px 16px 24px 0 theme(--color-shadow);
+  
+  --strata-inset-shadow-xs: inset 0 1px 2px 0 theme(--color-shadow);
+  --strata-inset-shadow-sm: inset 0 2px 4px 0 theme(--color-shadow);
+  --strata-inset-shadow-md: inset 0 4px 8px 0 theme(--color-shadow);
+  --strata-inset-shadow-lg: inset 0 6px 12px 0 theme(--color-shadow);
+  --strata-inset-shadow-xl: inset 0 8px 16px 0 theme(--color-shadow);
+
+  --strata-inset-raised-xs: inset 0px -1px 2px theme(--color-shadow), inset 0px 1px 4px theme(--color-highlight), inset 0px 1px 2px theme(--color-highlight);
+  --strata-inset-raised-sm: inset 0px -2px 3px theme(--color-shadow), inset 0px 2px 8px theme(--color-highlight), inset 0px 2px 4px theme(--color-highlight);
+  --strata-inset-raised-md: inset 0px -3px 4px theme(--color-shadow), inset 0px 3px 12px theme(--color-highlight), inset 0px 3px 6px theme(--color-highlight);
+  --strata-inset-raised-lg: inset 0px -4px 6px theme(--color-shadow), inset 0px 4px 16px theme(--color-highlight), inset 0px 4px 8px theme(--color-highlight);
+  --strata-inset-raised-xl: inset 0px -6px 8px theme(--color-shadow), inset 0px 6px 20px theme(--color-highlight), inset 0px 6px 8px theme(--color-highlight);
 }
 
 [data-theme="light"] {
@@ -373,11 +422,6 @@
 
 [data-theme="dark"] {
   color-scheme: dark;
-}
-
-@utility border-1 {
-  border-style: var(--tw-border-style);
-  border-width: 1px;
 }
 
 @utility gradient-border-* {
@@ -400,70 +444,6 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
-}
-
-@utility shadow-* {
-  box-shadow: var(--shadow-position) var(--shadow-position) var(--shadow-blur) 0
-    var(--shadow-color);
-}
-
-@utility shadow-1-* {
-  --shadow-color: --value(--color- *);
-  --shadow-position: 1px;
-  --shadow-blur: 2px;
-}
-
-@utility shadow-2-* {
-  --shadow-color: --value(--color- *);
-  --shadow-position: 2px;
-  --shadow-blur: 4px;
-}
-
-@utility shadow-4-* {
-  --shadow-color: --value(--color- *);
-  --shadow-position: 4px;
-  --shadow-blur: 8px;
-}
-
-@utility shadow-8-* {
-  --shadow-color: --value(--color- *);
-  --shadow-position: 8px;
-  --shadow-blur: 16px;
-}
-
-@utility shadow-16-* {
-  --shadow-color: --value(--color- *);
-  --shadow-position: 16px;
-  --shadow-blur: 32px;
-}
-
-@utility shadow-24-* {
-  --shadow-color: --value(--color- *);
-  --shadow-position: 24px;
-  --shadow-blur: 48px;
-}
-
-@utility inset-shadow-* {
-  box-shadow: inset var(--inset-position) var(--inset-position)
-    var(--inset-blur) 0 var(--inset-color);
-}
-
-@utility inset-shadow-1-* {
-  --inset-color: --value(--color- *);
-  --inset-position: 1px;
-  --inset-blur: 2px;
-}
-
-@utility inset-shadow-2-* {
-  --inset-blur: 3px;
-  --inset-color: --value(--color- *);
-  --inset-position: 2px;
-}
-
-@utility inset-shadow-3-* {
-  --inset-color: --value(--color- *);
-  --inset-position: 3px;
-  --inset-blur: 4px;
 }
 
 @utility style-text-* {
@@ -764,35 +744,3 @@
   }
 }
 
-@utility raised-1 {
-  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.35),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.15), 1px 1px 2px rgba(0, 0, 0, 0.25);
-}
-
-@utility raised-2 {
-  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.35),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.15), 2px 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-@utility raised-4 {
-  box-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.35),
-    inset 4px 4px 8px rgba(255, 255, 255, 0.15), 4px 4px 8px rgba(0, 0, 0, 0.25);
-}
-
-@utility raised-8 {
-  box-shadow: inset -8px -8px 16px rgba(0, 0, 0, 0.35),
-    inset 8px 8px 16px rgba(255, 255, 255, 0.15),
-    8px 8px 16px rgba(0, 0, 0, 0.25);
-}
-
-@utility raised-16 {
-  box-shadow: inset -16px -16px 32px rgba(0, 0, 0, 0.35),
-    inset 16px 16px 32px rgba(255, 255, 255, 0.15),
-    16px 16px 32px rgba(0, 0, 0, 0.25);
-}
-
-@utility raised-24 {
-  box-shadow: inset -24px -24px 48px rgba(0, 0, 0, 0.35),
-    inset 24px 24px 48px rgba(255, 255, 255, 0.15),
-    24px 24px 48px rgba(0, 0, 0, 0.25);
-}
