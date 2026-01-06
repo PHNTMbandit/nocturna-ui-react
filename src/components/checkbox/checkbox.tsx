@@ -16,7 +16,7 @@ export const Checkbox = ({
 		<div className="flex items-center gap-2">
 			<BaseCheckbox.Root
 				className={cn(
-					"data-checked:raised-1 inset-shadow-1-shadow flex size-md items-center justify-center rounded-sm bg-surface-dim text-on-accent transition-colors hover:cursor-pointer hover:disabled:cursor-not-allowed data-checked:bg-accent",
+					"group inset-shadow-xs flex size-md items-center justify-center rounded-sm bg-surface-dim text-on-accent outline-2 outline-accent/0 outline-offset-1 transition-colors hover:cursor-pointer hover:outline-accent hover:disabled:cursor-not-allowed data-checked:inset-shadow-raised-xs data-checked:bg-accent",
 					className,
 				)}
 				disabled={disabled}

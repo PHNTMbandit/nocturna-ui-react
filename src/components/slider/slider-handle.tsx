@@ -28,8 +28,8 @@ export const SliderHandle = ({
 						aria-valuemin={sliderInstance.options.min}
 						aria-valuenow={value}
 						className={cn(
-							"absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-primary bg-surface-container outline-none transition-[width,height,border] hover:cursor-pointer hover:border-secondary active:border-secondary",
-							isActive ? "size-md shadow-4-shadow" : "size-sm shadow-1-shadow",
+							"absolute inset-shadow-raised-xs top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary bg-surface-container-mid outline-none transition-[width,height,border] hover:cursor-pointer hover:border-2 active:border-2",
+							isActive ? "size-md shadow-lg" : "size-sm shadow-xs",
 							className,
 						)}
 						onKeyDown={onKeyDownHandler}

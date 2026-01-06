@@ -15,7 +15,7 @@ export const Input = ({
 		<div
 			aria-disabled={props.disabled}
 			className={cn(
-				"group inset-shadow-2-shadow flex h-xl w-full items-center gap-xs rounded-xl bg-surface-dim px-md py-sm outline-2 outline-transparent transition-all focus-within:caret-primary focus-within:outline-primary hover:not-focus-within:outline-outline data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50 data-[disabled=true]:hover:outline-transparent",
+				"group style-text-default-0 inset-shadow-sm flex h-xl w-full items-center gap-xs rounded-xl bg-surface-dim px-md py-sm outline-2 outline-transparent transition-all focus-within:caret-primary focus-within:outline-primary hover:not-focus-within:outline-outline data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50 data-[disabled=true]:hover:outline-transparent",
 				className,
 			)}
 			data-disabled={props.disabled}
@@ -24,7 +24,7 @@ export const Input = ({
 				<>
 					<div
 						className={cn(
-							"flex items-center justify-center text-on-surface-variant transition-all group-focus-within:text-primary [&>svg]:size-s",
+							"flex items-center justify-center text-on-surface-variant transition-all group-focus-within:text-primary [&>svg]:size-sm",
 						)}
 					>
 						{createElement(leadingIcon, {

@@ -10,7 +10,7 @@ export const TabsList = ({ className, ...props }: TabsListProps) => {
 		return (
 			<SwitchTabs.List
 				className={cn(
-					"relative z-0 flex h-fit grow flex-col gap-2 rounded-3xl bg-surface-neutral-primary-default p-2",
+					"relative inset-shadow-sm z-0 flex flex-col gap-xs overflow-hidden rounded-full bg-surface-dim px-xs",
 					className,
 				)}
 				{...props}
@@ -21,7 +21,7 @@ export const TabsList = ({ className, ...props }: TabsListProps) => {
 	return (
 		<SwitchTabs.List
 			className={cn(
-				"relative z-0 flex gap-1 rounded-full bg-surface-neutral-primary-default p-2",
+				"relative inset-shadow-sm z-0 flex w-full gap-xs overflow-hidden rounded-full bg-surface-dim",
 				className,
 			)}
 			{...props}

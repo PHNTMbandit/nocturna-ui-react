@@ -5,7 +5,7 @@ import type { LabelProps } from "./label.types"
 export const Label = ({ className, children, ref, ...props }: LabelProps) => {
 	return (
 		<label
-			className={cn("hover:cursor-pointer", className)}
+			className={cn("style-text-default--1 hover:cursor-pointer", className)}
 			data-slot="label"
 			ref={ref}
 			{...props}

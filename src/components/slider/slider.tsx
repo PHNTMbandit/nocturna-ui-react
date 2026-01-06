@@ -90,6 +90,11 @@ export const Slider = ({
 						)}
 				</SliderTrack>
 				{TrailingIcon && <TrailingIcon className="size-sm" weight="bold" />}
+				{values.map((value, index) => (
+					<span className="style-text-default-0" key={index}>
+						{value}
+					</span>
+				))}
 			</div>
 		</div>
 	)

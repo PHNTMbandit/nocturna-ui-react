@@ -11,7 +11,7 @@ export const TabsPanel = ({ className, ...props }: TabsPanelProps) => {
 			className={cn(
 				"relative rounded-xl bg-surface-neutral-primary-default",
 				orientation === "horizontal" ? "h-full min-h-0 flex-1" : "grow",
-				"flex items-center justify-center overflow-auto p-4",
+				"flex items-center justify-start overflow-auto p-4",
 				className,
 			)}
 			{...props}

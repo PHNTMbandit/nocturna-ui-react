@@ -6,7 +6,7 @@ export const Profile = ({
 	className,
 	imageUrl,
 	fallbackText,
-	profileName = "",
+	profileName,
 	profileEmail = "",
 	compact = false,
 	children,
@@ -30,8 +30,8 @@ export const Profile = ({
 					compact && "hidden",
 				)}
 			>
-				<span className="text-prose-0">{profileName}</span>
-				<span className="text-on-surface-variant text-prose--1">
+				<span className="style-text-default-0">{profileName}</span>
+				<span className="style-text-default--2 text-on-surface-variant">
 					{profileEmail}
 				</span>
 			</div>
