@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/PHNTMbandit/suwa-ui/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2026-01-08)
+
+
+### Bug Fixes
+
+* **package.json:** fix css side effects ([40ecb5b](https://github.com/PHNTMbandit/suwa-ui/commit/40ecb5b1781fa5210f0c1bf12ec8358d5becad3c))
+
 # [1.0.0-beta.2](https://github.com/PHNTMbandit/suwa-ui/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2026-01-08)
 
 
