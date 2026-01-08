@@ -3,9 +3,13 @@
 	"type": "module",
 	"author": "PHNTMbandit",
 	"license": "MIT",
+	"version": "1.0.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/PHNTMbandit/nocturna-ui-react"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"main": "./dist/nocturna-ui-react.es.js",
 	"types": "./dist/index.d.ts",
