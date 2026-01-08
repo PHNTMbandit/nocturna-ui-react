@@ -4,7 +4,7 @@
 	"author": "PHNTMbandit",
 	"description": "",
 	"license": "MIT",
-	"version": "0.0.0-development",
+	"version": "1.0.0-rc.1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/PHNTMbandit/suwa-ui.git"
