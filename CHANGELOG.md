@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/PHNTMbandit/suwa-ui/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2026-01-08)
+
+
+### Features
+
+* **index.html:** update site name ([f661b73](https://github.com/PHNTMbandit/suwa-ui/commit/f661b736569fa94961d225aa71a58580733593c3))
+
 # 1.0.0-beta.1 (2026-01-08)
 
 
