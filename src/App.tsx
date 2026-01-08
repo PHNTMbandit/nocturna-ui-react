@@ -46,7 +46,7 @@ export const App = ({ className, children, ref, ...props }: AppProps) => {
 			{/* Theme Controls */}
 			<div className="space-y-md">
 				<h1 className="style-text-strong-3 text-on-surface">
-					nocturna UI Badge Showcase
+					suwa UI Badge Showcase
 				</h1>
 				<div className="flex gap-sm">
 					<Button onClick={() => setTheme("light")} size="small" tone="neutral">

@@ -1,4 +1,4 @@
-name: Release to NPM
+name: Publish to NPM
 
 on:
   workflow_dispatch:
@@ -70,7 +70,8 @@ jobs:
       - run: pnpm test
       - run: pnpm build
 
-      - run: pnpm exec semantic-release
+      - name: Release
+        run: pnpm exec semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

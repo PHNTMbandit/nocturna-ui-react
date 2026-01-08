@@ -31,7 +31,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
-			fileName: (format) => `nocturna-ui-react.${format}.js`,
+			fileName: (format) => `suwa-ui.${format}.js`,
 			formats: ["es"],
 		},
 		rollupOptions: {

@@ -1,27 +1,29 @@
 {
-	"name": "nocturna-ui-react",
+	"name": "suwa-ui",
 	"type": "module",
 	"author": "PHNTMbandit",
+	"description": "",
 	"license": "MIT",
 	"version": "0.0.0-development",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/PHNTMbandit/nocturna-ui-react.git"
+		"url": "https://github.com/PHNTMbandit/suwa-ui.git"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
-	"main": "./dist/nocturna-ui-react.es.js",
+	"main": "./dist/suwa-ui.es.js",
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"default": "./dist/nocturna-ui-react.es.js"
+			"default": "./dist/suwa-ui.es.js"
 		},
 		"./styles": "./dist/styles.css"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"README.md"
 	],
 	"sideEffects": [
 		"**/*.css"
