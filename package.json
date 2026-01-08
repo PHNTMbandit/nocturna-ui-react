@@ -16,8 +16,10 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
+			"import": "./dist/suwa-ui.es.js",
 			"default": "./dist/suwa-ui.es.js"
 		},
+		"./styles.css": "./dist/styles.css",
 		"./styles": "./dist/styles.css"
 	},
 	"files": [
@@ -25,7 +27,8 @@
 		"README.md"
 	],
 	"sideEffects": [
-		"**/*.css"
+		"**/*.css",
+		"./dist/styles.css"
 	],
 	"scripts": {
 		"dev": "vite",
