@@ -1,0 +1,20 @@
+import { NavigationMenu as BaseNavigationMenu } from "@base-ui/react/navigation-menu"
+import { cn } from "@/utils/cn"
+import type { NavigationMenuProps } from "./navigation-menu.types"
+
+export const NavigationMenu = ({
+	className,
+	children,
+	ref,
+	...props
+}: NavigationMenuProps) => {
+	return (
+		<BaseNavigationMenu.Root
+			className={cn("min-w-max", className)}
+			ref={ref}
+			{...props}
+		>
+			{children}
+		</BaseNavigationMenu.Root>
+	)
+}
