@@ -422,6 +422,15 @@
   color-scheme: dark;
 }
 
+@layer base {
+  body{
+    background-color: theme(--color-surface);
+    color: theme(--color-on-surface);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+
 @utility gradient-border-* {
   position: relative;
 
