@@ -2,6 +2,7 @@ import { cn } from "@/utils/cn"
 import { type SeparatorProps, separatorVariants } from "./separator.types"
 
 export const Separator = ({
+	tone,
 	orientation,
 	thickness,
 	className,
@@ -11,7 +12,9 @@ export const Separator = ({
 }: SeparatorProps) => {
 	return (
 		<div
-			className={cn(separatorVariants({ orientation, thickness, className }))}
+			className={cn(
+				separatorVariants({ tone, orientation, thickness, className }),
+			)}
 			ref={ref}
 			{...props}
 		>

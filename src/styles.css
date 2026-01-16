@@ -328,7 +328,7 @@
   --suwa-on-surface: light-dark(var(--black-700), var(--white-200));
   --suwa-on-surface-variant: light-dark(var(--black-400), var(--white-600));
   --suwa-outline: light-dark(var(--black-300), var(--black-400));
-  --suwa-outline-variant: light-dark(var(--black-500), var(--black-600));
+  --suwa-outline-variant: light-dark(var(--black-100), var(--black-600));
   
   /* System colors */
   --suwa-scrim: #00000059;
@@ -428,6 +428,7 @@
     color: theme(--color-on-surface);
     font-family: var(--font-body);
     font-size: var(--text-base);
+    scrollbar-color: theme(--color-accent) theme(--color-surface-dim);
   }
 }
 

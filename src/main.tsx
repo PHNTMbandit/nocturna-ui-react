@@ -1,99 +1,126 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import "./styles.css"
-import { CheckCircleIcon } from "@phosphor-icons/react"
 import {
-	Accordion,
-	AccordionItem,
-	AccordionPanel,
-	AccordionTrigger,
+	CalendarIcon,
+	GearIcon,
+	HouseIcon,
+	MagnifyingGlassIcon,
+	MailboxIcon,
+} from "@phosphor-icons/react"
+import {
+	Badge,
+	Sidebar,
+	SidebarContent,
+	SidebarFooter,
+	SidebarGroup,
+	SidebarGroupContent,
+	SidebarGroupLabel,
+	SidebarHeader,
+	SidebarMenu,
+	SidebarMenuLink,
+	SidebarSubMenu,
+	SidebarSubMenuPanel,
+	SidebarSubMenuTrigger,
 } from "./components"
+import { SidebarProvider } from "./components/sidebar/sidebar-provider"
+import { SidebarToggle } from "./components/sidebar/sidebar-toggle"
 
 const rootElement = document.getElementById("root")
+
+const _items = [
+	{
+		title: "Home",
+		url: "#",
+		icon: HouseIcon,
+		active: false,
+	},
+	{
+		title: "Inbox",
+		url: "#",
+		icon: MailboxIcon,
+		active: false,
+	},
+	{
+		title: "Calendar",
+		url: "#",
+		icon: CalendarIcon,
+		active: true,
+	},
+	{
+		title: "Search",
+		url: "#",
+		icon: MagnifyingGlassIcon,
+		active: false,
+	},
+	{
+		title: "Settings",
+		url: "#",
+		icon: GearIcon,
+		active: false,
+	},
+]
 
 if (rootElement) {
 	ReactDOM.createRoot(rootElement).render(
 		<React.StrictMode>
-			<main className="p-2xl">
-				<Accordion>
-					<AccordionItem>
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the first item"
-							title="First Item"
-						/>
-						<AccordionPanel heading="Details for First Item">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</AccordionPanel>
-					</AccordionItem>
-					<AccordionItem tone="primary">
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the second item"
-							title="Second Item"
-						/>
-						<AccordionPanel heading="Details for Second Item">
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-					<AccordionItem tone="secondary">
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the third item"
-							title="Third Item"
-						/>
-						<AccordionPanel heading="Details for Third Item">
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-					<AccordionItem tone="accent">
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the fourth item"
-							title="Fourth Item"
-						/>
-						<AccordionPanel heading="Details for Fourth Item">
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-					<AccordionItem tone="error">
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the fifth item"
-							title="Fifth Item"
-						/>
-						<AccordionPanel heading="Details for Fifth Item">
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-					<AccordionItem tone="success">
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the sixth item"
-							title="Sixth Item"
-						/>
-						<AccordionPanel heading="Details for Sixth Item">
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-					<AccordionItem tone="warning">
-						<AccordionTrigger
-							icon={CheckCircleIcon}
-							subtitle="This is the seventh item"
-							title="Seventh Item"
-						/>
-						<AccordionPanel heading="Details for Seventh Item">
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-				</Accordion>
+			<main className="h-screen w-full">
+				<SidebarProvider>
+					<Sidebar>
+						<SidebarHeader className="flex items-center justify-between">
+							<span className="style-text-strong-2">Suwa UI</span>
+						</SidebarHeader>
+						<SidebarContent>
+							<SidebarGroup>
+								<SidebarGroupContent>
+									<SidebarMenu>
+										<SidebarToggle />
+										<SidebarMenuLink
+											data-active={_items[0].active ? "" : undefined}
+											label={_items[0].title}
+											leadingIcon={_items[0].icon}
+										>
+											<Badge>4</Badge>
+										</SidebarMenuLink>
+									</SidebarMenu>
+								</SidebarGroupContent>
+							</SidebarGroup>
+							<SidebarGroup>
+								<SidebarGroupLabel>Group 1</SidebarGroupLabel>
+								<SidebarGroupContent>
+									<SidebarMenu>
+										{_items.slice(1).map((_item) => (
+											<SidebarMenuLink
+												data-active={_item.active ? "" : undefined}
+												key={_item.title}
+												label={_item.title}
+												leadingIcon={_item.icon}
+											/>
+										))}
+									</SidebarMenu>
+									<SidebarSubMenu>
+										<SidebarSubMenuTrigger
+											label={_items[1].title}
+											leadingIcon={_items[1].icon}
+										/>
+										<SidebarSubMenuPanel>
+											{_items.slice(1).map((_item) => (
+												<SidebarMenuLink
+													data-active={_item.active ? "" : undefined}
+													key={_item.title}
+													label={_item.title}
+													leadingIcon={_item.icon}
+												/>
+											))}
+										</SidebarSubMenuPanel>
+									</SidebarSubMenu>
+								</SidebarGroupContent>
+							</SidebarGroup>
+						</SidebarContent>
+						<SidebarFooter>Footer content</SidebarFooter>
+					</Sidebar>
+					<div className="grow">Content goes here</div>
+				</SidebarProvider>
 			</main>
 		</React.StrictMode>,
 	)
